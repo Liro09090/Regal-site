@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Frizeria Regal – tuns, barbă, ras tradițional</title>
-<meta name="description" content="Frizeria Regal: tunsori pentru bărbați, aranjat barbă și ras tradițional cu prosop cald. Programări pe WhatsApp.">
+<title>Regal Salon – frizerie și coafor în Săcălaz</title>
+<meta name="description" content="Regal Salon din Săcălaz: tunsori pentru bărbați, coafuri și styling pentru femei. Programări pe WhatsApp.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Frizeria Regal – tratament de rege">
-<meta property="og:description" content="Tuns, barbă și ras tradițional. Programare online în câteva secunde.">
+<meta property="og:title" content="Regal Salon – Săcălaz">
+<meta property="og:description" content="Frizerie și coafor în Săcălaz. Programări pe WhatsApp.">
 <meta property="og:image" content="icons/apple-180.png">
 <link rel="icon" type="image/png" href="icons/favicon.png">
 <link rel="apple-touch-icon" href="icons/apple-180.png">
@@ -71,7 +71,7 @@
   .status{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin-bottom:22px}
   .dot{width:9px;height:9px;border-radius:50%;background:var(--dim)}
   .dot.on{background:#FFFFFF;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
-  .hero h1{font-size:clamp(52px,8vw,104px);line-height:.95;letter-spacing:-.01em}
+  .hero h1{font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-.01em}
   .lead{margin:28px 0 40px;max-width:520px;color:var(--muted);font-size:19px}
   .actions{display:flex;flex-wrap:wrap;gap:14px}
   /* stema: împinsă în spate, cu umbră și luciu */
@@ -143,6 +143,7 @@
   .msg[hidden]{display:none}
   .note{color:var(--dim);font-size:13px;margin:0}
 
+  .mtitle{font-family:var(--serif);font-weight:600;font-size:34px;margin:0 0 6px;padding-bottom:14px;border-bottom:1px solid var(--line3)}
   a.item{color:inherit;text-decoration:none}
   .item .book{font-size:13px;color:var(--muted2);margin-top:4px;letter-spacing:.04em}
   a.item:hover .book{color:var(--text)}
@@ -244,7 +245,7 @@
 
 <header>
   <div class="wrap head">
-    <a href="#acasa" class="brand" aria-label="Frizeria Regal – acasă">
+    <a href="#acasa" class="brand" aria-label="Regal Salon – acasă">
       <img src="icons/logo.webp" alt="Stema Regal">
       <span>REGAL</span>
     </a>
@@ -267,9 +268,9 @@
   <div class="wrap hero">
   <div class="hero-text">
     <div class="status"><span class="dot" id="statusDot"></span><span id="statusText">Program</span></div>
-    <p class="eyebrow">Frizerie pentru bărbați · <span data-c="city"></span></p>
-    <h1>Tratament<br>de rege.</h1>
-    <p class="lead">Tunsori precise, barbă aranjată ca la carte și ras tradițional cu prosop cald. Intri cum vrei, ieși ca un rege.</p>
+    <p class="eyebrow">Frizerie &amp; coafor · <span data-c="city"></span></p>
+    <h1>Frumusețea,<br>în mâinile<br>potrivite.</h1>
+    <p class="lead">Tunsori pentru el, coafuri pentru ea, într-un salon în care te simți bine. Scrie-ne pe WhatsApp și îți găsim o oră.</p>
     <div class="actions">
       <a data-href="wa" class="btn" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.6-.4z"/></svg> Programează-te pe WhatsApp</a>
       <a href="#servicii" class="btn-ghost">Vezi serviciile</a>
@@ -299,7 +300,7 @@
 <section id="echipa">
   <div class="wrap section">
     <p class="eyebrow">Echipa</p>
-    <h2>Frizerii Regal</h2>
+    <h2>Echipa Regal</h2>
     <div class="team" id="team"></div>
   </div>
 </section>
@@ -336,7 +337,7 @@
 <footer>
   <div class="wrap foot">
     <img src="icons/logo.webp" alt="">
-    <span>© <span id="year"></span> Frizeria Regal · <span data-c="city"></span></span>
+    <span>© <span id="year"></span> Regal Salon · <span data-c="city"></span></span>
   </div>
 </footer>
 
@@ -358,37 +359,40 @@ const CONFIG = {
   city:     'Săcălaz',
   address:  'Strada Principală nr. 378, Săcălaz, jud. Timiș',
   mapQuery: 'Strada Principală 378, 307370 Săcălaz, Timiș, România',   // harta caută după adresă (pin-ul firmei pe Google e greșit)
-  whatsapp: '40700000000',      // numărul de WhatsApp al frizeriei: 40 + numărul fără 0 din față, fără spații
+  whatsapp: '40774674789',      // 0774 674 789 – numărul de WhatsApp al salonului: 40 + numărul fără 0 din față
   instagram:'',                 // ex: https://instagram.com/regal.frizerie  (gol = nu apare)
-  facebook: '',                 // ex: https://facebook.com/regal
+  facebook: 'https://www.facebook.com/p/Regal-Salon-100091276122674/',
   // Program: [deschidere, închidere] sau null = închis. 0 = duminică, 1 = luni ... 6 = sâmbătă
-  hours: { 1:['09:00','19:00'], 2:['09:00','19:00'], 3:['09:00','19:00'], 4:['09:00','19:00'], 5:['09:00','19:00'], 6:['09:00','15:00'], 0:null },
+  hours: { 1:['09:00','20:00'], 2:['09:00','20:00'], 3:['09:00','20:00'], 4:['09:00','20:00'], 5:['09:00','20:00'], 6:['09:00','18:00'], 0:null },
   slotMinutes: 60,              // din cât în cât sunt orele de programare
+  // cat: 'ea' sau 'el'. min = durata în minute (scrie null dacă nu vrei să apară)
   services: [
-    { name:'Tuns clasic',     desc:'Consultanță, tuns, spălat și styling',     price:'[PREȚ] lei', min:40 },
-    { name:'Tuns + barbă',    desc:'Pachetul complet pentru un look îngrijit', price:'[PREȚ] lei', min:60 },
-    { name:'Aranjat barbă',   desc:'Contur, scurtat și ulei de barbă',         price:'[PREȚ] lei', min:30 },
-    { name:'Ras tradițional', desc:'Brici, prosop cald și balsam după ras',    price:'[PREȚ] lei', min:30 },
-    { name:'Tuns copii',      desc:'Pentru prinții sub 12 ani',                price:'[PREȚ] lei', min:30 },
-    { name:'Pachetul Regal',  desc:'Tuns, barbă, ras, mască și styling',       price:'[PREȚ] lei', min:90 }
+    { cat:'ea', name:'Tuns damă',            desc:'Consultanță, tuns, spălat și uscat',  price:'[PREȚ] lei', min:null },
+    { cat:'ea', name:'Spălat & coafat',      desc:'Brushing sau bucle, pentru orice zi', price:'[PREȚ] lei', min:null },
+    { cat:'ea', name:'Coafură de ocazie',    desc:'Nunți, botezuri, evenimente',         price:'[PREȚ] lei', min:null },
+    { cat:'ea', name:'Vopsit',               desc:'[De confirmat cu salonul]',            price:'[PREȚ] lei', min:null },
+    { cat:'el', name:'Tuns bărbați',         desc:'Tuns, spălat și styling',             price:'[PREȚ] lei', min:null },
+    { cat:'el', name:'Tuns + barbă',         desc:'Pachetul complet',                    price:'[PREȚ] lei', min:null },
+    { cat:'el', name:'Aranjat barbă',        desc:'Contur și scurtat',                   price:'[PREȚ] lei', min:null },
+    { cat:'el', name:'Tuns copii',           desc:'Pentru cei mici',                     price:'[PREȚ] lei', min:null }
   ],
   // Echipa: câte un rând pentru fiecare frizer. Poza: pune fișierul în folderul "poze" (ideal 800x1000, portret).
   team: [
-    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
-      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]', '[Specialitate, ex: fade]'] },
-    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
-      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]', '[Specialitate, ex: barbă]'] },
-    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
-      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]'] }
+    { name:'Radinca Onu', role:'Hairstylist', photo:'', years:'',
+      desc:'[O descriere scurtă: în ce e cea mai bună.]', courses:['[Curs / certificare]'] },
+    { name:'[Nume]', role:'[Frizer / Hairstylist]', photo:'', years:'[X] ani experiență',
+      desc:'[O descriere scurtă: în ce e cel mai bun.]', courses:['[Curs / certificare]'] },
+    { name:'[Nume]', role:'[Frizer / Hairstylist]', photo:'', years:'[X] ani experiență',
+      desc:'[O descriere scurtă: în ce e cel mai bun.]', courses:['[Curs / certificare]'] }
   ],
   // Poze: pune fișierele în folderul "poze" lângă index.html și scrie numele aici
   // size: 'big' (mare, 2x2), 'wide' (lată), 'tall' (înaltă) sau gol (mică). Prima e bine să fie 'big'.
   gallery: [
-    // { src:'poze/1.jpg', caption:'Fade cu barbă', size:'big' },
-    // { src:'poze/2.jpg', caption:'Contur barbă' },
+    // { src:'poze/1.jpg', caption:'Coafură', size:'big' },
+    // { src:'poze/2.jpg', caption:'Tunsoare bărbați' },
     // { src:'poze/3.jpg', caption:'Salonul', size:'tall' },
-    // { src:'poze/4.jpg', caption:'Tunsoare clasică' },
-    // { src:'poze/5.jpg', caption:'Ras cu prosop cald', size:'wide' },
+    // { src:'poze/4.jpg', caption:'Barbă' },
+    // { src:'poze/5.jpg', caption:'Styling', size:'wide' },
     // { src:'poze/6.jpg', caption:'Detalii', size:'wide' },
   ]
 };
@@ -403,7 +407,7 @@ const waLink = text => 'https://wa.me/' + CONFIG.whatsapp + (text ? '?text=' + e
 
 // texte și linkuri
 document.querySelectorAll('[data-c]').forEach(el => el.textContent = CONFIG[el.dataset.c]);
-document.querySelectorAll('[data-href="wa"]').forEach(el => el.href = waLink('Bună! Aș vrea să fac o programare la Regal.'));
+document.querySelectorAll('[data-href="wa"]').forEach(el => el.href = waLink('Bună! Aș vrea să fac o programare la Regal Salon.'));
 $('year').textContent = new Date().getFullYear();
 
 // meniu mobil
@@ -414,10 +418,14 @@ $('menuBtn').addEventListener('click', () => {
 $('nav').addEventListener('click', e => { if (e.target.closest('a')) { $('nav').classList.remove('open'); $('menuBtn').setAttribute('aria-expanded', false); } });
 
 // servicii
-$('menu').innerHTML = CONFIG.services.map(s =>
+const svcRow = s =>
   `<a class="item" href="${waLink('Bună! Aș vrea o programare pentru: ' + s.name + '. Când aveți liber?')}" target="_blank" rel="noopener">
    <div><div class="name">${esc(s.name)}</div><div class="desc">${esc(s.desc)}</div></div>
-   <div class="meta"><div class="price">${esc(s.price)}</div><div class="dur">~${s.min} min</div><div class="book">Programează →</div></div></a>`).join('');
+   <div class="meta"><div class="price">${esc(s.price)}</div>${s.min ? `<div class="dur">~${s.min} min</div>` : ''}<div class="book">Programează →</div></div></a>`;
+$('menu').innerHTML = [['ea','Pentru ea'],['el','Pentru el']].map(([c, title]) => {
+  const list = CONFIG.services.filter(s => (s.cat || 'el') === c);
+  return list.length ? `<div class="mgroup"><h3 class="mtitle">${title}</h3>${list.map(svcRow).join('')}</div>` : '';
+}).join('');
 
 // program + deschis acum
 const now = new Date(), nowMin = now.getHours()*60 + now.getMinutes();
@@ -435,7 +443,7 @@ const q = encodeURIComponent(CONFIG.mapQuery || CONFIG.address);
 $('map').innerHTML = `<iframe title="Hartă Regal, ${esc(CONFIG.city)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
   src="https://www.google.com/maps?q=${q}&z=16&output=embed"></iframe>
   <span class="pin" aria-hidden="true"></span>
-  <div class="map-card" aria-hidden="true"><img src="icons/logo.webp" alt=""><div><b>Regal</b><span>${esc(CONFIG.city)} nr. 378</span></div></div>`;
+  <div class="map-card" aria-hidden="true"><img src="icons/logo.webp" alt=""><div><b>Regal Salon</b><span>${esc(CONFIG.city)} nr. 378</span></div></div>`;
 $('gmaps').href = 'https://www.google.com/maps/search/?api=1&query=' + q;
 $('waze').href = 'https://waze.com/ul?q=' + q + '&navigate=yes';
 
@@ -443,7 +451,7 @@ $('waze').href = 'https://waze.com/ul?q=' + q + '&navigate=yes';
 const soc = [];
 if (CONFIG.instagram) soc.push(`<a class="btn-ghost" href="${esc(CONFIG.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
 if (CONFIG.facebook)  soc.push(`<a class="btn-ghost" href="${esc(CONFIG.facebook)}" target="_blank" rel="noopener">Facebook</a>`);
-soc.push(`<a class="btn" href="${waLink('Bună! Aș vrea să fac o programare la Regal.')}" target="_blank" rel="noopener">WhatsApp</a>`);
+soc.push(`<a class="btn" href="${waLink('Bună! Aș vrea să fac o programare la Regal Salon.')}" target="_blank" rel="noopener">WhatsApp</a>`);
 $('social').innerHTML = soc.join('');
 
 // echipa
@@ -473,7 +481,7 @@ if (G.length) {
       <img src="${esc(g.src)}" alt="${esc(g.caption || 'Lucrare Regal ' + (i+1))}" loading="lazy">
       ${g.caption ? `<span class="g-cap">${esc(g.caption)}</span>` : ''}<span class="g-zoom">${zoomSvg}</span></button>`).join('');
 } else {
-  const demo = [['Fade cu barbă','big'],['Contur barbă',''],['Salonul','tall'],['Tunsoare clasică',''],['Ras cu prosop cald','wide'],['Detalii','wide']];
+  const demo = [['Coafură','big'],['Tunsoare bărbați',''],['Salonul','tall'],['Barbă',''],['Styling','wide'],['Detalii','wide']];
   $('gallery').innerHTML = demo.map(([c, s]) => `<div class="g-item g-ph ${s}"><span>Poză în curând</span><b>${c}</b></div>`).join('');
 }
 let lbI = 0;
@@ -511,7 +519,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mark = (els, step) => els.forEach((el, i) => { el.setAttribute('data-reveal', ''); if (step) el.style.setProperty('--d', (i * step).toFixed(2) + 's'); });
 document.querySelectorAll('section:not(#acasa) .eyebrow').forEach(e => e.insertAdjacentHTML('afterbegin', '<span class="eyebrow-line"></span>'));
 mark([...document.querySelectorAll('section:not(#acasa) .eyebrow, section:not(#acasa) h2')]);
-mark([...document.querySelectorAll('#menu .item')], .08);
+mark([...document.querySelectorAll('#menu .mtitle, #menu .item')], .06);
 mark([...document.querySelectorAll('#team .member')], .12);
 mark([...document.querySelectorAll('#gallery > *')], .08);
 mark([...document.querySelectorAll('#hours > div')], .06);
@@ -546,7 +554,7 @@ if (!reduce && matchMedia('(pointer: fine)').matches) {
 }
 
 // date pentru Google (afișare corectă în căutări)
-const ld = { '@context':'https://schema.org', '@type':'BarberShop', name:'Frizeria Regal',
+const ld = { '@context':'https://schema.org', '@type':'HairSalon', name:'Regal Salon',
   address: { '@type':'PostalAddress', streetAddress:'Strada Principală nr. 378', addressLocality:'Săcălaz', addressRegion:'Timiș', addressCountry:'RO' }, url: location.href,
   openingHoursSpecification: Object.entries(CONFIG.hours).filter(([,h]) => h).map(([d,h]) =>
     ({ '@type':'OpeningHoursSpecification', dayOfWeek:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d], opens:h[0], closes:h[1] })) };

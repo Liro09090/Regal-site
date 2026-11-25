@@ -1,7 +1,7 @@
 {
-  "name": "Frizeria Regal",
+  "name": "Regal Salon",
   "short_name": "Regal",
-  "description": "Programări la Frizeria Regal",
+  "description": "Regal Salon – Săcălaz",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
