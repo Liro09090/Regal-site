@@ -143,10 +143,13 @@
   .msg[hidden]{display:none}
   .note{color:var(--dim);font-size:13px;margin:0}
 
-  .cta{text-align:center;display:flex;flex-direction:column;align-items:center}
-  .cta h2{margin-bottom:20px}
-  .cta-text{max-width:560px;color:var(--muted);font-size:18px;margin:0 0 36px}
-  .btn-big{font-size:18px;padding:18px 36px;min-height:60px}
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .fcard{background:var(--bg);padding:40px 30px;transition:background .4s}
+  .fcard:hover{background:var(--bg2)}
+  .fcard svg{color:var(--text);margin-bottom:22px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .fcard:hover svg{transform:translateY(-4px) rotate(-6deg)}
+  .fcard h3{font-family:var(--serif);font-size:28px;font-weight:600;margin:0 0 10px;line-height:1.1}
+  .fcard p{margin:0;color:var(--muted2);font-size:15px}
   a.item{color:inherit;text-decoration:none}
   .item .book{font-size:13px;color:var(--muted2);margin-top:4px;letter-spacing:.04em}
   a.item:hover .book{color:var(--text)}
@@ -255,11 +258,15 @@
   </div>
 </section>
 
-<section id="programare" class="wrap section cta">
-  <p class="eyebrow">Programări</p>
-  <h2>Scrie-ne pe WhatsApp</h2>
-  <p class="cta-text">Spune-ne ce serviciu vrei și când ți-ar conveni, iar noi îți confirmăm ora în cel mai scurt timp.</p>
-  <a data-href="wa" class="btn btn-big" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8.9 3.8.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.6-.4z"/></svg> Deschide conversația</a>
+<section id="experienta" class="wrap section">
+  <p class="eyebrow">De ce Regal</p>
+  <h2>Experiența Regal</h2>
+  <div class="feat">
+    <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg><h3>Tunsori precise</h3><p>Fiecare tunsoare începe cu o discuție: ce vrei, ce ți se potrivește și cum o porți acasă.</p></div>
+    <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c3-1 5-4 6-8l1-6 2 6c1 4 3 7 7 8"/><path d="M8 21h8"/></svg><h3>Barbă ca la carte</h3><p>Contur curat, lungime echilibrată și ulei de barbă la final.</p></div>
+    <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h13a3 3 0 0 0 0-6H8"/><path d="M3 12v6h15"/><path d="M8 6c0-2 1-3 3-3"/></svg><h3>Ras tradițional</h3><p>Brici, prosop cald și balsam după ras, ritualul clasic de frizerie.</p></div>
+    <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg><h3>Aproape de tine</h3><p>În Săcălaz, la nr. 378. Treci pe la noi sau scrie-ne pe WhatsApp.</p></div>
+  </div>
 </section>
 
 <section id="galerie" class="alt">
@@ -406,7 +413,7 @@ const mark = (els, step) => els.forEach((el, i) => { el.setAttribute('data-revea
 document.querySelectorAll('section:not(#acasa) .eyebrow').forEach(e => e.insertAdjacentHTML('afterbegin', '<span class="eyebrow-line"></span>'));
 mark([...document.querySelectorAll('section:not(#acasa) .eyebrow, section:not(#acasa) h2')]);
 mark([...document.querySelectorAll('#menu .item')], .08);
-mark([...document.querySelectorAll('.cta > *')], .08);
+mark([...document.querySelectorAll('.fcard')], .1);
 mark([...document.querySelectorAll('#gallery > *')], .08);
 mark([...document.querySelectorAll('#hours > div')], .06);
 mark([...document.querySelectorAll('.info > *')], .05);
