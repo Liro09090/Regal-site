@@ -154,6 +154,22 @@
   .item .book{font-size:13px;color:var(--muted2);margin-top:4px;letter-spacing:.04em}
   a.item:hover .book{color:var(--text)}
 
+  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+  .member{background:var(--bg);border:1px solid var(--line2);padding:28px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:border-color .4s,transform .4s cubic-bezier(.2,.7,.2,1)}
+  .member:hover{border-color:var(--line3);transform:translateY(-5px)}
+  .m-photo{width:116px;height:116px;border-radius:50%;overflow:hidden;border:1px solid var(--line3);padding:4px;margin-bottom:12px;flex:none}
+  .m-photo img,.m-photo .mono{width:100%;height:100%;border-radius:50%;display:block}
+  .m-photo img{object-fit:cover;filter:grayscale(1);transition:filter .6s}
+  .member:hover .m-photo img{filter:grayscale(0)}
+  .m-photo .mono{display:flex;align-items:center;justify-content:center;background:var(--bg2);font-family:var(--serif);font-size:44px;color:var(--text)}
+  .m-name{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.1}
+  .m-role{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted2)}
+  .m-desc{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .m-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px}
+  .m-tags span{font-size:12px;border:1px solid var(--line3);padding:4px 10px}
+  .m-book{margin-top:auto;padding-top:16px;font-size:14px;color:var(--text);text-decoration:none}
+  .m-book:hover{color:var(--muted)}
+
   /* gallery */
   .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
   .tile{aspect-ratio:1/1;border:1px solid var(--line2);padding:0;overflow:hidden;cursor:pointer;background:var(--bg2)}
@@ -216,6 +232,7 @@
     </button>
     <nav id="nav" aria-label="Meniu principal">
       <a href="#servicii">Servicii</a>
+      <a href="#echipa">Echipa</a>
       <a href="#galerie">Galerie</a>
       <a href="#contact">Contact</a>
       <a data-href="wa" class="btn" target="_blank" rel="noopener">Programează-te</a>
@@ -266,6 +283,14 @@
     <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c3-1 5-4 6-8l1-6 2 6c1 4 3 7 7 8"/><path d="M8 21h8"/></svg><h3>Barbă ca la carte</h3><p>Contur curat, lungime echilibrată și ulei de barbă la final.</p></div>
     <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h13a3 3 0 0 0 0-6H8"/><path d="M3 12v6h15"/><path d="M8 6c0-2 1-3 3-3"/></svg><h3>Ras tradițional</h3><p>Brici, prosop cald și balsam după ras, ritualul clasic de frizerie.</p></div>
     <div class="fcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg><h3>Aproape de tine</h3><p>În Săcălaz, la nr. 378. Treci pe la noi sau scrie-ne pe WhatsApp.</p></div>
+  </div>
+</section>
+
+<section id="echipa" class="alt">
+  <div class="wrap section">
+    <p class="eyebrow">Echipa</p>
+    <h2>Frizerii Regal</h2>
+    <div class="team" id="team"></div>
   </div>
 </section>
 
@@ -334,6 +359,15 @@ const CONFIG = {
     { name:'Tuns copii',      desc:'Pentru prinții sub 12 ani',                price:'[PREȚ] lei', min:30 },
     { name:'Pachetul Regal',  desc:'Tuns, barbă, ras, mască și styling',       price:'[PREȚ] lei', min:90 }
   ],
+  // Echipa: câte un rând pentru fiecare frizer. Poza: pune fișierul în folderul "poze" (ideal 800x1000, portret).
+  team: [
+    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
+      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]', '[Specialitate, ex: fade]'] },
+    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
+      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]', '[Specialitate, ex: barbă]'] },
+    { name:'[Nume frizer]', role:'Frizer', photo:'', years:'[X] ani experiență',
+      desc:'[O descriere scurtă: ce îi place să facă, în ce e cel mai bun.]', courses:['[Curs / certificare]'] }
+  ],
   // Poze: pune fișierele în folderul "poze" lângă index.html și scrie numele aici
   gallery: [ /* 'poze/1.jpg', 'poze/2.jpg', 'poze/3.jpg' */ ]
 };
@@ -391,6 +425,23 @@ if (CONFIG.facebook)  soc.push(`<a class="btn-ghost" href="${esc(CONFIG.facebook
 soc.push(`<a class="btn" href="${waLink('Bună! Aș vrea să fac o programare la Regal.')}" target="_blank" rel="noopener">WhatsApp</a>`);
 $('social').innerHTML = soc.join('');
 
+// echipa
+$('team').innerHTML = CONFIG.team.map(m => {
+  const initial = /^[\[]/.test(m.name) ? 'R' : m.name.trim().charAt(0).toUpperCase();
+  const photo = m.photo
+    ? `<img src="${esc(m.photo)}" alt="${esc(m.name)}" loading="lazy">`
+    : `<div class="mono" aria-hidden="true">${esc(initial)}</div>`;
+  const who = /^[\[]/.test(m.name) ? 'Regal' : m.name;
+  return `<article class="member">
+    <div class="m-photo">${photo}</div>
+      <div class="m-name">${esc(m.name)}</div>
+      <div class="m-role">${esc(m.role || 'Frizer')}${m.years ? ' · ' + esc(m.years) : ''}</div>
+      ${m.desc ? `<p class="m-desc">${esc(m.desc)}</p>` : ''}
+      ${m.courses && m.courses.length ? `<div class="m-tags">${m.courses.map(c => `<span>${esc(c)}</span>`).join('')}</div>` : ''}
+      <a class="m-book" href="${waLink('Bună! Aș vrea o programare la ' + who + '. Când aveți liber?')}" target="_blank" rel="noopener">Programează-te la ${esc(who)} →</a>
+    </article>`;
+}).join('');
+
 // galerie + lightbox
 if (CONFIG.gallery.length) {
   $('gallery').innerHTML = CONFIG.gallery.map((src, i) =>
@@ -414,6 +465,7 @@ document.querySelectorAll('section:not(#acasa) .eyebrow').forEach(e => e.insertA
 mark([...document.querySelectorAll('section:not(#acasa) .eyebrow, section:not(#acasa) h2')]);
 mark([...document.querySelectorAll('#menu .item')], .08);
 mark([...document.querySelectorAll('.fcard')], .1);
+mark([...document.querySelectorAll('#team .member')], .12);
 mark([...document.querySelectorAll('#gallery > *')], .08);
 mark([...document.querySelectorAll('#hours > div')], .06);
 mark([...document.querySelectorAll('.info > *')], .05);
